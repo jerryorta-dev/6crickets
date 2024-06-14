@@ -38,3 +38,13 @@ To run jest test on only camara sufficiency check, run:
 ```bash
  npx nx run sixcrickets-app:test --testFile=is-hardware-camera-sufficient-check.spec.ts
 ```
+
+## Issues
+
+If you encounter any issues after running tests, please run:
+
+```bash
+ npx nx reset
+```
+
+This will clean any Nx cache and stop all Deamon processes that may be running.
