@@ -1,5 +1,32 @@
 # 6Crickets
 
+## Code References
+
+API returning time in seconds: 
+`apps/api/src/app/app.service.ts`
+
+Angular service consuming API:
+`apps/sixcrickets-app/src/app/services/api.service.ts`
+
+Countdown clock component:
+`apps/sixcrickets-app/src/app/deadline-clock/deadline-clock.component.ts`
+
+Camera function:
+`apps/sixcrickets-app/src/app/camera-sufficiency/is-hardware-camera-sufficient-check.ts`
+
+## Environment setup 
+
+```bash
+npm ci
+
+```
+
+or 
+
+```bash
+ npm install
+```
+
 ## Start API server
 
 Run: 
