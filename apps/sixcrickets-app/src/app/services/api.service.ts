@@ -15,9 +15,9 @@ export class ApiService {
 
   /**
    * Do not use this method directly. Use `secondsToDeadline` instead.
-   * @private
+   * is public for testing purposes.
    */
-  private deadlineApi(): Observable<ApiResponse> {
+  deadlineApi(): Observable<ApiResponse> {
     return this.client.get<ApiResponse>(this.endpoint);
   }
 
