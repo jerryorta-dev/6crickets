@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Signal, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-deadline-clock',
@@ -8,4 +10,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './deadline-clock.component.html',
   styleUrl: './deadline-clock.component.scss',
 })
-export class DeadlineClockComponent {}
+export class DeadlineClockComponent {
+  private api = inject(ApiService);
+
+  secondsLeft = <Signal<number>>toSignal(this.api.secondsToDeadline());
+
+
+}

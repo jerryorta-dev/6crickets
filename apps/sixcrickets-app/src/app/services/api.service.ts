@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, interval } from 'rxjs';
+import { map, scan, switchMap, takeWhile, startWith } from 'rxjs/operators';
 import { ApiResponse } from '@sixcrickets/shared';
 
 @Injectable({
@@ -12,8 +13,36 @@ export class ApiService {
 
   private endpoint = 'http://localhost:3000/api';
 
-  deadline(): Observable<ApiResponse> {
+  /**
+   * Do not use this method directly. Use `secondsToDeadline` instead.
+   * @private
+   */
+  private deadlineApi(): Observable<ApiResponse> {
     return this.client.get<ApiResponse>(this.endpoint);
   }
 
+  /**
+   * Return update every second countdown to the deadline.
+   * Countdown is in seconds.
+   * @returns Observable<number>
+   */
+  secondsToDeadline(): Observable<number> {
+    return this.deadlineApi().pipe(
+      map(response => response.secondsLeft),
+      switchMap(secondsLeft => {
+
+        // countdown every second
+        return interval(1000).pipe(
+          // start with the current time
+          startWith(secondsLeft),
+
+          // count down every second
+          scan(time => time - 1, secondsLeft),
+
+          // stop when time is less than 0
+          takeWhile(time => time >= 0)
+        );
+      })
+    );
+  }
 }
