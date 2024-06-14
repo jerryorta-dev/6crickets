@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "app": "npx nx run sixcrickets-app:serve:development",
-    "api": "npx nx run api:serve:development"
+    "api": "npx nx run api:serve:development",
+    "test": "npx nx run sixcrickets-app:test"
   },
   "private": true,
   "dependencies": {

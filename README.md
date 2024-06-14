@@ -22,9 +22,18 @@ App serves at `http://localhost:4200`.
 
 ## Run tests
 
+Run:
+  
+  ```bash
+  npm run test
+  ```
+
 ### Camera Sufficiency
 
-To run jest test
+To run jest test on only camara sufficiency check, run:
+
+```bash
+ npx nx run sixcrickets-app:test --testFile=hardware-camera-sufficient-check.spec.ts
 
 ```bash
  npx nx run sixcrickets-app:test --testFile=is-hardware-camera-sufficient-check.spec.ts
