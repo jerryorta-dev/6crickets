@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-typography: mat.define-typography();
+@include mat.typography-hierarchy($my-typography);
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$violet-palette,
+  ),
+  typography: (
+    brand-family: 'Roboto, sans-serif',
+    bold-weight: 400
+  ),
+  density: (
+    scale: -1
+  )
+));
+
+html {
+  // Emit theme-dependent styles for common features used across multiple components.
+  @include mat.core-theme($theme);
+
+  @include mat.all-component-themes($theme);
+  @include mat.typography-hierarchy($my-typography);
+}
