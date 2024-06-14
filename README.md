@@ -20,3 +20,12 @@ In another terminal, run:
 App serves at `http://localhost:4200`.
 
 
+## Run tests
+
+### Camera Sufficiency
+
+To run jest test
+
+```bash
+ npx nx run sixcrickets-app:test --testFile=is-hardware-camera-sufficient-check.spec.ts
+```
