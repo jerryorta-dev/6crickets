@@ -1,6 +1,17 @@
 # 6Crickets
 
+## Start API server
+
+Run: 
+
+```bash
+ npm run api
+```
 
 ## Start the application
 
-Run `npx nx serve sixcrickets-app`
+In another terminal, run:
+
+```bash
+ npm run app
+```
