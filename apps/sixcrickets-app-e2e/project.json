@@ -1,9 +1,0 @@
-{
-  "name": "sixcrickets-app-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "apps/sixcrickets-app-e2e/src",
-  "implicitDependencies": ["sixcrickets-app"],
-  "// targets": "to see all targets run: nx show project sixcrickets-app-e2e --web",
-  "targets": {}
-}
