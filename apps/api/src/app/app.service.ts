@@ -15,7 +15,7 @@ export class AppService {
   getData(): ApiResponse {
 
     const now = new Date();
-    // Calculate the seconds left until the deadline.
+    // Calculate the seconds left until the deadlineApi.
     const secondsLeft = Math.max(0, Math.floor((this.deadline.getTime() - now.getTime()) / 1000));
 
     return { secondsLeft };
