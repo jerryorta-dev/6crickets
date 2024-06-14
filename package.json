@@ -2,7 +2,10 @@
   "name": "@sixcrickets-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "app": "npx nx run sixcrickets-app:serve:development",
+    "api": "npx nx run api:serve:development"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.0.0",
