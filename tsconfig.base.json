@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@sixcrickets/design-library-components": [
+        "libs/shared/design-library-components/src/index.ts"
+      ],
       "@sixcrickets/shared-domain": ["libs/shared/domain/src/index.ts"]
     }
   },
