@@ -2,7 +2,7 @@
   "name": "design-library-components",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/design-library-components/src",
-  "prefix": "lib",
+  "prefix": "dlc",
   "projectType": "library",
   "tags": [],
   "targets": {
