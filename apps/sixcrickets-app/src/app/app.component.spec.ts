@@ -23,6 +23,11 @@ describe('AppComponent', () => {
   });
 
 
+ it('should render logo', () => {
+   fixture.detectChanges();
+   const compiled = fixture.nativeElement as HTMLElement;
 
+   expect(compiled.querySelector('.logo')?.innerHTML).toBe('6crickets');
+ });
 
 });

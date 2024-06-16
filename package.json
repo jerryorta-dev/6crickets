@@ -5,7 +5,10 @@
   "scripts": {
     "app": "npx nx run sixcrickets-app:serve:development",
     "api": "npx nx run api:serve:development",
-    "test": "npx nx run sixcrickets-app:test"
+    "test": "npx nx run-many -t test -p sixcrickets-app shared-domain design-library-components",
+    "test.app": "npx nx run sixcrickets-app:test",
+    "test.domain": "npx nx run shared-domain:test",
+    "test.design": "npx nx run design-library-components:test"
   },
   "private": true,
   "dependencies": {
