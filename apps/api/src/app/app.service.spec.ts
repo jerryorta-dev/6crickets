@@ -15,7 +15,8 @@ describe('AppService', () => {
 
   describe('getData', () => {
     it('should return "Hello API"', () => {
-      expect(service.getData()).toEqual({ message: 'Hello API' });
+      const response = service.getData()
+      expect(response.secondsLeft).toBeGreaterThan(0);
     });
   });
 });

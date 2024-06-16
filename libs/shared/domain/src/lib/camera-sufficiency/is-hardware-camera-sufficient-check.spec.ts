@@ -1,9 +1,9 @@
 /**
  * Test for isSufficientCheck function
  */
-import { SoftwareCamera } from './camera.model';
+import { CameraRange, SoftwareCamera } from './camera.model';
 import { CAMERAS_AVAILABLE_LIST } from './cameras';
-import { isHardwareCameraSufficientCheck } from './is-hardware-camera-sufficient-check';
+import { getMatchedCameras, isHardwareCameraSufficientCheck } from './is-hardware-camera-sufficient-check';
 
 /**
  * FOR TESTING ONLY
@@ -40,7 +40,7 @@ const SOFTWARE_CAMERAS: { [key: string]: SoftwareCamera } = {
 
 
 
-describe('isSufficientCheck', () => {
+describe('isHardwareCameraSufficientCheck', () => {
   it('should return true if the coverage is sufficient', () => {
 
     const { distanceRange, lightLevelRange } = SOFTWARE_CAMERAS['Zoom'];
@@ -74,3 +74,17 @@ describe('isSufficientCheck', () => {
   });
 
 });
+
+
+describe('getMatchedCameras', () => {
+
+  it('should return list of matched cameras', () => {
+    const desiredDistanceRange: CameraRange = [ 2, 8 ];
+    const desiredLightLevelRange: CameraRange = [ 300, 800 ];
+    const result = getMatchedCameras(desiredDistanceRange, desiredLightLevelRange, CAMERAS_AVAILABLE_LIST);
+    expect(result).toEqual([
+      CAMERAS_AVAILABLE_LIST[2],
+
+    ]);
+  });
+})
