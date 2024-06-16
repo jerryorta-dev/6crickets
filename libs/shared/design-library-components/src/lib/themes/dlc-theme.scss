@@ -26,7 +26,7 @@
     @include mat.core-theme($theme);
 
     @include mat.all-component-themes($theme);
-    @include mat.typography-hierarchy($typography);
+    //@include mat.typography-hierarchy($typography);
   }
 
   body {
@@ -34,7 +34,7 @@
     @include color-vars.add-css-vars($theme);
 
     font-family: 'Roboto, sans-serif';
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 300;
     line-height: 1.5;
     color: var(--dlc-text-color);

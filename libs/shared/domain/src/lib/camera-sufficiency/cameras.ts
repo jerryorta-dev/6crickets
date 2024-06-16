@@ -28,6 +28,7 @@ export const CAMERAS_AVAILABLE_LIST: HardwareCamera[] = [
 ];
 
 /**
+ * For Testing Only
  * Dictionary of software Cameras Available of type SoftwareCamera
  */
 export const SOFTWARE_CAMERAS: { [key: string]: SoftwareCamera } = {

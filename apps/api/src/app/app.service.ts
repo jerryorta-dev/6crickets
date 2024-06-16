@@ -7,7 +7,7 @@ export class AppService {
    * Deadline to new year.
    * @private
    */
-  private readonly deadline = new Date('2026-01-01T00:00:00Z');
+  private readonly deadline = new Date('2025-01-01T00:00:00Z');
 
   getData(): ApiResponse {
     const now = new Date();

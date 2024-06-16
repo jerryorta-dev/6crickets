@@ -1,44 +1,16 @@
 .dlc-deadline-clock {
   display: flex;
   width: 400px;
-  height: 200px;
+  height: 100px;
   border: var(--dlc-border);
   border-radius: 8px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
 
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  overflow: hidden;
-
-
-  .header {
-    display: block;
-    font-size: 24px;
+  .seconds {
+    font-size: 2rem;
     font-weight: 500;
-
-    width: 100%;
-    text-align: center;
-    background-color: var(--dlc-component-header-bg-color);
     color: var(--dlc-color-primary);
-    margin-bottom: 0;
   }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 20px;
-
-    font: 300 1rem / 1.5rem Roboto, sans-serif;
-    letter-spacing: 0.031rem;
-
-    .seconds {
-      font-size: 2rem;
-      font-weight: 500;
-      color: var(--dlc-color-primary);
-    }
-  }
-
 }
