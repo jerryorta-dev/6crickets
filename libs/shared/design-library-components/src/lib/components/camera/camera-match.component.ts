@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, output, OutputEmitterRef, ViewEncapsulation } from '@angular/core';
+import { Component, input, InputSignal, OnInit, output, OutputEmitterRef, ViewEncapsulation } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
-import { CameraRangeSpec } from '@sixcrickets/shared-domain';
+import { CameraRangeSpec, HardwareCamera } from '@sixcrickets/shared-domain';
 
 @Component({
   selector: 'dlc-camera-match',
@@ -34,7 +34,8 @@ export class CameraMatchComponent implements OnInit {
   lowerLightLevel = 100;
   upperLightLevel = 500;
 
-  selectedRange: OutputEmitterRef<CameraRangeSpec> = output()
+  matchedCameras: InputSignal<HardwareCamera[]> = input(<HardwareCamera[]>[])
+  selectedCameraRangeRange: OutputEmitterRef<CameraRangeSpec> = output()
 
   get rangeSpec(): CameraRangeSpec {
     return {
@@ -45,6 +46,6 @@ export class CameraMatchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.selectedRange.emit(this.rangeSpec);
+    this.selectedCameraRangeRange.emit(this.rangeSpec);
   }
 }

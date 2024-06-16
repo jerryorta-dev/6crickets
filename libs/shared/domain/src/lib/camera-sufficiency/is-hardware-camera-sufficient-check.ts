@@ -45,15 +45,27 @@ export function isHardwareCameraSufficientCheck(
   return distanceCoverageSufficient && lightLevelCoverageSufficient;
 }
 
-// // Example usage:
-// const desiredDistanceRange: CameraRange = [1, 10];
-// const desiredLightLevelRange: CameraRange = [100, 1000];
-//
-// const hardwareCameras: HardwareCamera[] = [
-//   { distanceRange: [1, 5], lightLevelRange: [100, 500] },
-//   { distanceRange: [5, 10], lightLevelRange: [500, 1000] },
-//   { distanceRange: [2, 8], lightLevelRange: [300, 800] }
-// ];
-//
-// const result = isCoverageSufficient(desiredDistanceRange, desiredLightLevelRange, hardwareCameras);
-// console.log("Coverage sufficient:", result);
+
+/**
+ * return list of matched cameras
+ */
+export function getMatchedCameras(
+  desiredDistanceRange: CameraRange,
+  desiredLightLevelRange: CameraRange,
+  hardwareCameras: HardwareCamera[]): HardwareCamera[] {
+  const [desiredMinDistance, desiredMaxDistance] = desiredDistanceRange;
+  const [desiredMinLight, desiredMaxLight] = desiredLightLevelRange;
+  const matchedCameras: HardwareCamera[] = [];
+
+  for (const camera of hardwareCameras) {
+    const [cameraMinDistance, cameraMaxDistance] = camera.distanceRange;
+    const [cameraMinLight, cameraMaxLight] = camera.lightLevelRange;
+
+    if ((cameraMinDistance <= desiredMinDistance) && (cameraMaxDistance >= desiredMaxDistance) &&
+      (cameraMinLight <= desiredMinLight) && (cameraMaxLight >= desiredMaxLight)) {
+      matchedCameras.push(camera);
+    }
+    }
+
+  return matchedCameras;
+  }
