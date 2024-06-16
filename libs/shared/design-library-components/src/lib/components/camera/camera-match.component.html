@@ -1,28 +1,24 @@
-<div class="dlc-camera-match__input">
-  <div class="dlc-camera-match__input-label">Distance Range</div>
+<div class="dlc-camera-match-input__input">
+  <div class="dlc-camera-match-input__input-label">Distance Range</div>
   <div>
-    <span class="dlc-camera-match__input-range dlc-camera-match__input-range-min">0</span>
+    <span class="dlc-camera-match-input__input-range dlc-camera-match-input__input-range-min">0</span>
     <mat-slider min="0" max="10"  showTickMarks discrete >
       <input [(ngModel)]="lowerDistance" matSliderStartThumb (valueChange)="selectedCameraRangeRange.emit(rangeSpec)">
       <input [(ngModel)]="upperDistance" matSliderEndThumb  (valueChange)="selectedCameraRangeRange.emit(rangeSpec)">
     </mat-slider>
-    <span class="dlc-camera-match__input-range dlc-camera-match__input-range-max">10</span>
+    <span class="dlc-camera-match-input__input-range dlc-camera-match-input__input-range-max">10</span>
   </div>
 
 </div>
-<div class="dlc-camera-match__input">
-  <div class="dlc-camera-match__input-label">Light Level Range</div>
+<div class="dlc-camera-match-input__input">
+  <div class="dlc-camera-match-input__input-label">Light Level Range</div>
 
   <div>
-    <span class="dlc-camera-match__input-range dlc-camera-match__input-range-min">0</span>
+    <span class="dlc-camera-match-input__input-range dlc-camera-match-input__input-range-min">0</span>
     <mat-slider min="0" max="1000" step="10" showTickMarks discrete>
       <input [(ngModel)]="lowerLightLevel" matSliderStartThumb (valueChange)="selectedCameraRangeRange.emit(rangeSpec)">
       <input [(ngModel)]="upperLightLevel" matSliderEndThumb  (valueChange)="selectedCameraRangeRange.emit(rangeSpec)">
     </mat-slider>
-    <span class="dlc-camera-match__input-range dlc-camera-match__input-range-max">1000</span>
+    <span class="dlc-camera-match-input__input-range dlc-camera-match-input__input-range-max">1000</span>
   </div>
-</div>
-
-<div>
-  {{matchedCameras() | json }}
 </div>

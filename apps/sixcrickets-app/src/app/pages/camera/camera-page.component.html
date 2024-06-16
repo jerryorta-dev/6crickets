@@ -1,3 +1,4 @@
-<dlc-camera-match
-  [matchedCameras]="cameraMatchService.matchedCameras()"
-  (selectedCameraRangeRange)="cameraMatchService.matchCameras($event)"></dlc-camera-match>
+<dlc-camera-match-input
+  (selectedCameraRangeRange)="cameraMatchService.matchCameras($event)"></dlc-camera-match-input>
+
+<dlc-cameras-matched [matchedCameras]="cameraMatchService.matchedCameras()"></dlc-cameras-matched>

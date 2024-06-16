@@ -13,8 +13,8 @@ export function isHardwareCameraSufficientCheck(
   desiredLightLevelRange: CameraRange,
   hardwareCameras: HardwareCamera[]
 ): boolean {
-  const [desiredMinDistance, desiredMaxDistance] = desiredDistanceRange;
-  const [desiredMinLight, desiredMaxLight] = desiredLightLevelRange;
+  const [ desiredMinDistance, desiredMaxDistance ] = desiredDistanceRange;
+  const [ desiredMinLight, desiredMaxLight ] = desiredLightLevelRange;
 
   let coveredMinDistance = Infinity;
   let coveredMaxDistance = -Infinity;
@@ -23,8 +23,8 @@ export function isHardwareCameraSufficientCheck(
 
   // Iterate over all hardware cameras to find the minimum and maximum distance and light level ranges covered by them
   for (const camera of hardwareCameras) {
-    const [cameraMinDistance, cameraMaxDistance] = camera.distanceRange;
-    const [cameraMinLight, cameraMaxLight] = camera.lightLevelRange;
+    const [ cameraMinDistance, cameraMaxDistance ] = camera.distanceRange;
+    const [ cameraMinLight, cameraMaxLight ] = camera.lightLevelRange;
 
     // Update the minimum and maximum ranges covered by the hardware cameras
     coveredMinDistance = Math.min(coveredMinDistance, cameraMinDistance);
@@ -53,19 +53,19 @@ export function getMatchedCameras(
   desiredDistanceRange: CameraRange,
   desiredLightLevelRange: CameraRange,
   hardwareCameras: HardwareCamera[]): HardwareCamera[] {
-  const [desiredMinDistance, desiredMaxDistance] = desiredDistanceRange;
-  const [desiredMinLight, desiredMaxLight] = desiredLightLevelRange;
+  const [ desiredMinDistance, desiredMaxDistance ] = desiredDistanceRange;
+  const [ desiredMinLight, desiredMaxLight ] = desiredLightLevelRange;
   const matchedCameras: HardwareCamera[] = [];
 
   for (const camera of hardwareCameras) {
-    const [cameraMinDistance, cameraMaxDistance] = camera.distanceRange;
-    const [cameraMinLight, cameraMaxLight] = camera.lightLevelRange;
+    const [ cameraMinDistance, cameraMaxDistance ] = camera.distanceRange;
+    const [ cameraMinLight, cameraMaxLight ] = camera.lightLevelRange;
 
     if ((cameraMinDistance <= desiredMinDistance) && (cameraMaxDistance >= desiredMaxDistance) &&
       (cameraMinLight <= desiredMinLight) && (cameraMaxLight >= desiredMaxLight)) {
       matchedCameras.push(camera);
     }
-    }
+  }
 
   return matchedCameras;
-  }
+}

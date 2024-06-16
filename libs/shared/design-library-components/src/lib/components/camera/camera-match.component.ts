@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, InputSignal, OnInit, output, OutputEmitterRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, output, OutputEmitterRef, ViewEncapsulation } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
-import { CameraRangeSpec, HardwareCamera } from '@sixcrickets/shared-domain';
+import { CameraRangeSpec } from '@sixcrickets/shared-domain';
 
 @Component({
-  selector: 'dlc-camera-match',
+  selector: 'dlc-camera-match-input',
   standalone: true,
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { CameraRangeSpec, HardwareCamera } from '@sixcrickets/shared-domain';
   styleUrl: './camera-match.component.scss',
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'dlc-camera-match'
+    class: 'dlc-camera-match-input'
   }
 })
 export class CameraMatchComponent implements OnInit {
@@ -34,7 +34,6 @@ export class CameraMatchComponent implements OnInit {
   lowerLightLevel = 100;
   upperLightLevel = 500;
 
-  matchedCameras: InputSignal<HardwareCamera[]> = input(<HardwareCamera[]>[])
   selectedCameraRangeRange: OutputEmitterRef<CameraRangeSpec> = output()
 
   get rangeSpec(): CameraRangeSpec {
