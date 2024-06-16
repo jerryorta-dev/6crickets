@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { CountdownPageComponent } from './pages/countdown-page.component';
+import { CountdownPageComponent } from './pages/countdown/countdown-page.component';
 
 export const appRoutes: Route[] = [
   {
