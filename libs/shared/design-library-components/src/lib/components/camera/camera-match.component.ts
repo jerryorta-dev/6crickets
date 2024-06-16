@@ -21,7 +21,13 @@ import { CameraRangeSpec } from '@sixcrickets/shared-domain';
   ],
   templateUrl: './camera-match.component.html',
   styleUrl: './camera-match.component.scss',
+  // Allow component to more easily be styled by parent components
+  // in applications
   encapsulation: ViewEncapsulation.None,
+
+  // Not really "style guide" compliant,
+  // but Google development teams ( Angular Material )
+  // use this. Could use @Hostbinding instead.
   host: {
     class: 'dlc-camera-match-input'
   }
