@@ -22,7 +22,7 @@ describe('DeadlineClockComponent', () => {
 
     const secondsToDeadline = signal(10);
 
-    component.secondsLeft = secondsToDeadline as unknown as typeof fixture.componentInstance.secondsLeft; // <-- ugh.
+    component.secondsLeft = secondsToDeadline as unknown as typeof fixture.componentInstance.secondsLeft;
 
     expect(component.secondsLeft()).toBe(10);
   });
@@ -31,7 +31,7 @@ describe('DeadlineClockComponent', () => {
 
     const secondsToDeadline = signal(10);
 
-    component.secondsLeft = secondsToDeadline as unknown as typeof fixture.componentInstance.secondsLeft; // <-- ugh.
+    component.secondsLeft = secondsToDeadline as unknown as typeof fixture.componentInstance.secondsLeft;
 
     fixture.detectChanges();
 
