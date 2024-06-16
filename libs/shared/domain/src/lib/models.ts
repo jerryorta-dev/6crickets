@@ -1,3 +1,3 @@
 export interface ApiResponse {
-  secondsLeft: number
+  secondsLeft: number;
 }
