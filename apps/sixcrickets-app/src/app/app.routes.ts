@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
-import { CountdownComponent } from './pages/countdown.component';
+import { CountdownPageComponent } from './pages/countdown-page.component';
 
 export const appRoutes: Route[] = [
   {
     path: 'countdown',
-    component: CountdownComponent
+    component: CountdownPageComponent
   },
 
   {

@@ -5,8 +5,8 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
   selector: 'dlc-deadline-clock',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './deadline-clock.component.html',
-  styleUrl: './deadline-clock.component.scss',
+  templateUrl: './dlc-deadline-clock.component.html',
+  styleUrl: './dlc-deadline-clock.component.scss',
 
   // Allow component to more easily be styled by parent components
   // in applications
@@ -19,6 +19,6 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
     class: 'dlc-deadline-clock',
   },
 })
-export class DeadlineClockComponent {
+export class DlcDeadlineClockComponent {
   secondsLeft = input(0);
 }

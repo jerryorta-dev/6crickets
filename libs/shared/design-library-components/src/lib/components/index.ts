@@ -1,1 +1,1 @@
-export * from './deadline-clock/deadline-clock.component';
+export * from './deadline-clock/dlc-deadline-clock.component';
