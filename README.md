@@ -3,16 +3,20 @@
 ## Code References
 
 API returning time in seconds: 
-`apps/api/src/app/app.service.ts`
+`apps/api/src/app/app.service.ts`  
+[See GitHub Source](https://github.com/jerryorta-dev/6crickets/blob/main/apps/api/src/app/app.service.ts)
 
 Angular service consuming API:
-`libs/shared/domain/src/lib/services/api.service.ts`
+`libs/shared/domain/src/lib/services/api.service.ts`  
+[See GitHub Source](https://github.com/jerryorta-dev/6crickets/blob/main/libs/shared/domain/src/lib/services/api.service.ts)
 
 Countdown clock component:
-`libs/shared/design-library-components/src/lib/components/deadline-clock`
+`libs/shared/design-library-components/src/lib/components/deadline-clock`  
+[See GitHub Source](https://github.com/jerryorta-dev/6crickets/blob/main/libs/shared/design-library-components/src/lib/components/deadline-clock)
 
 Camera function:
-`libs/shared/domain/src/lib/camera-sufficiency/is-hardware-camera-sufficient-check.ts`
+`libs/shared/domain/src/lib/camera-sufficiency/is-hardware-camera-sufficient-check.ts`  
+[See GitHub Source](https://github.com/jerryorta-dev/6crickets/blob/main/libs/shared/domain/src/lib/camera-sufficiency/is-hardware-camera-sufficient-check.ts)
 
 ## Environment setup 
 

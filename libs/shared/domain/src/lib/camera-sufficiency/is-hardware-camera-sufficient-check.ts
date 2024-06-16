@@ -47,7 +47,8 @@ export function isHardwareCameraSufficientCheck(
 
 
 /**
- * return list of matched cameras
+ * return list of matched cameras.
+ * Used for UI to display the matched cameras.
  */
 export function getMatchedCameras(
   desiredDistanceRange: CameraRange,
