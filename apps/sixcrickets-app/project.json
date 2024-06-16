@@ -23,7 +23,12 @@
           }
         ],
         "styles": ["apps/sixcrickets-app/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/shared/design-library-components/src/lib/themes"
+          ]
+        }
       },
       "configurations": {
         "production": {

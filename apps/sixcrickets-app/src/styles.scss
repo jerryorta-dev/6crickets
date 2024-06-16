@@ -1,38 +1,10 @@
 @use '@angular/material' as mat;
+@use 'dlc-theme';
 
-@include mat.core();
-
-$my-typography: mat.define-typography();
-@include mat.typography-hierarchy($my-typography);
-
-$theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$violet-palette,
-  ),
-  typography: (
-    brand-family: 'Roboto, sans-serif',
-    bold-weight: 400
-  ),
-  density: (
-    scale: -1
-  )
-));
-
-html {
-  // Emit theme-dependent styles for common features used across multiple components.
-  @include mat.core-theme($theme);
-
-  @include mat.all-component-themes($theme);
-  @include mat.typography-hierarchy($my-typography);
-}
+@include dlc-theme.dlc-theme();
 
 body {
-  font-family: 'Roboto, sans-serif';
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #333;
+
   margin: 0;
   padding: 0;
 }

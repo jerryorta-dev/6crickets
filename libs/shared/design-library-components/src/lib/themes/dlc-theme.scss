@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+@use 'theming/css-vars' as color-vars;
+
+@mixin dlc-theme() {
+  @include mat.core();
+
+  $typography: mat.define-typography();
+  @include mat.typography-hierarchy($typography);
+
+  $theme: mat.define-theme((
+    color: (
+      theme-type: light,
+      primary: mat.$green-palette,
+    ),
+    typography: (
+      brand-family: 'Roboto, sans-serif',
+      bold-weight: 400
+    ),
+    density: (
+      scale: -1
+    )
+  ));
+
+  html {
+    // Emit theme-dependent styles for common features used across multiple components.
+    @include mat.core-theme($theme);
+
+    @include mat.all-component-themes($theme);
+    @include mat.typography-hierarchy($typography);
+  }
+
+  body {
+
+    @include color-vars.add-css-vars($theme);
+
+    font-family: 'Roboto, sans-serif';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--dlc-text-color);
+  }
+}

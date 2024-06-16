@@ -2,7 +2,7 @@
   display: flex;
   width: 400px;
   height: 200px;
-  border: 1px solid #b6b6b6;
+  border: var(--dlc-border);
   border-radius: 8px;
 
   flex-direction: column;
@@ -18,8 +18,8 @@
 
     width: 100%;
     text-align: center;
-    background-color: #f9f1fa;
-    color: mediumpurple;
+    background-color: var(--dlc-component-header-bg-color);
+    color: var(--dlc-color-primary);
     margin-bottom: 0;
   }
 
@@ -37,7 +37,7 @@
     .seconds {
       font-size: 2rem;
       font-weight: 500;
-      color: mediumpurple;
+      color: var(--dlc-color-primary);
     }
   }
 
