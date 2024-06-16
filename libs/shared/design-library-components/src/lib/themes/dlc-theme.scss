@@ -22,17 +22,12 @@
   ));
 
   html {
-    // Emit theme-dependent styles for common features used across multiple components.
     @include mat.core-theme($theme);
-
     @include mat.all-component-themes($theme);
-    //@include mat.typography-hierarchy($typography);
   }
 
   body {
-
     @include color-vars.add-css-vars($theme);
-
     font-family: 'Roboto, sans-serif';
     font-size: 12px;
     font-weight: 300;

@@ -1,0 +1,31 @@
+.dlc-cameras-matched {
+
+
+  table {
+    width: 100%;
+    //border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: var(--dlc-border);
+    border-radius: var(--dlc-border-radius);
+    overflow: hidden;
+
+    th {
+      background-color: var(--dlc-component-header-bg-color);
+      color: var(--dlc-text-color);
+      font-weight: bold;
+    }
+
+
+    th, td{
+      text-align: left;
+      padding: 10px;
+      width: 25%;
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--dlc-table-row-background-color);
+    }
+  }
+}

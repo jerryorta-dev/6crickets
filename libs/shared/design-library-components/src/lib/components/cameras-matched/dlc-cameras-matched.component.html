@@ -1,3 +1,22 @@
-<div>
-  {{matchedCameras() | json}}
-</div>
+<div class="">Hardware Cameras Matched</div>
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Distance Range</th>
+      <th>Light Level Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(camera of matchedCameras(); track camera) {
+      <tr >
+        <td>{{ camera.cameraBrand }}</td>
+        <td>{{ camera.cameraModel }}</td>
+        <td>{{ camera.distanceRange[0] }} - {{ camera.distanceRange[1] }}</td>
+        <td>{{ camera.lightLevelRange[0] }} - {{ camera.lightLevelRange[1] }}</td>
+      </tr>
+    }
+
+  </tbody>
+</table>

@@ -28,11 +28,11 @@ import { CameraRangeSpec } from '@sixcrickets/shared-domain';
 })
 export class CameraMatchComponent implements OnInit {
 
-  lowerDistance = 2;
+  lowerDistance = 5;
   upperDistance = 8;
 
-  lowerLightLevel = 100;
-  upperLightLevel = 500;
+  lowerLightLevel = 540;
+  upperLightLevel = 860;
 
   selectedCameraRangeRange: OutputEmitterRef<CameraRangeSpec> = output()
 

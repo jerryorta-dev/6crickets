@@ -70,67 +70,7 @@ export const CAMERAS_AVAILABLE_LIST: HardwareCamera[] = [
     cameraModel: 'fp',
     distanceRange: [ 4, 9 ],
     lightLevelRange: [ 400, 900 ]
-  },
-  {
-    cameraBrand: 'Hasselblad',
-    cameraModel: 'X1D II 50C',
-    distanceRange: [ 2, 7 ],
-    lightLevelRange: [ 200, 700 ]
-  },
-  {
-    cameraBrand: 'Pentax',
-    cameraModel: 'K-1 Mark II',
-    distanceRange: [ 3, 8 ],
-    lightLevelRange: [ 300, 800 ]
-  },
-  {
-    cameraBrand: 'Sigma',
-    cameraModel: 'fp',
-    distanceRange: [ 4, 9 ],
-    lightLevelRange: [ 400, 900 ]
-  },
-  {
-    cameraBrand: 'Hasselblad',
-    cameraModel: 'X1D II 50C',
-    distanceRange: [ 2, 7 ],
-    lightLevelRange: [ 200, 700 ]
-  },
-  {
-    cameraBrand: 'Pentax',
-    cameraModel: 'K-1 Mark II',
-    distanceRange: [ 3, 8 ],
-    lightLevelRange: [ 300, 800 ]
-  },
-  {
-    cameraBrand: 'Sigma',
-    cameraModel: 'fp',
-    distanceRange: [ 4, 9 ],
-    lightLevelRange: [ 400, 900 ]
-  },
-  {
-    cameraBrand: 'Hasselblad',
-    cameraModel: 'X1D II 50C',
-    distanceRange: [ 2, 7 ],
-    lightLevelRange: [ 200, 700 ]
-  },
-  {
-    cameraBrand: 'Pentax',
-    cameraModel: 'K-1 Mark II',
-    distanceRange: [ 3, 8 ],
-    lightLevelRange: [ 300, 800 ]
-  },
-  {
-    cameraBrand: 'Sigma',
-    cameraModel: 'fp',
-    distanceRange: [ 4, 9 ],
-    lightLevelRange: [ 400, 900 ]
-  },
-  {
-    cameraBrand: 'Hasselblad',
-    cameraModel: 'X1D II 50C',
-    distanceRange: [ 2, 7 ],
-    lightLevelRange: [ 200, 700 ]
-  },
+  }
 
 ];
 
