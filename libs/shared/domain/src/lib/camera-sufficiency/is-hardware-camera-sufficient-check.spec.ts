@@ -1,9 +1,13 @@
 /**
  * Test for isSufficientCheck function
  */
-import { CameraRange, SoftwareCamera } from './camera.model';
+import { CameraRange, HardwareCamera, SoftwareCamera } from './camera.model';
 import { CAMERAS_AVAILABLE_LIST } from './cameras';
-import { getMatchedCameras, isHardwareCameraSufficientCheck } from './is-hardware-camera-sufficient-check';
+import {
+  getMatchedCameras,
+  isAnyCameraMatched,
+  isHardwareCameraSufficientCheck
+} from './is-hardware-camera-sufficient-check';
 
 /**
  * FOR TESTING ONLY
@@ -41,12 +45,15 @@ const SOFTWARE_CAMERAS: { [key: string]: SoftwareCamera } = {
 
 
 describe('isHardwareCameraSufficientCheck', () => {
-  it('should return true if the coverage is sufficient', () => {
+  it('should return false if either distance or light level are out of range', () => {
 
     const { distanceRange, lightLevelRange } = SOFTWARE_CAMERAS['Zoom'];
 
     const result = isHardwareCameraSufficientCheck(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST);
-    expect(result).toBe(true);
+    expect(result).toBe(false);
+
+    // Alternative approach
+    expect(isAnyCameraMatched(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST)).toBe(false);
   });
 
   it('should return false if the light level is out of range', () => {
@@ -55,6 +62,9 @@ describe('isHardwareCameraSufficientCheck', () => {
 
     const result = isHardwareCameraSufficientCheck(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST);
     expect(result).toBe(false);
+
+    // Alternative approach
+    expect(isAnyCameraMatched(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST)).toBe(false);
   });
 
   it('should return false if the light level is out of range', () => {
@@ -63,6 +73,9 @@ describe('isHardwareCameraSufficientCheck', () => {
 
     const result = isHardwareCameraSufficientCheck(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST);
     expect(result).toBe(false);
+
+    // Alternative approach
+    expect(isAnyCameraMatched(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST)).toBe(false);
   });
 
   it('should return true if all params in range', () => {
@@ -71,6 +84,36 @@ describe('isHardwareCameraSufficientCheck', () => {
 
     const result = isHardwareCameraSufficientCheck(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST);
     expect(result).toBe(true);
+
+    // Alternative approach
+    expect(isAnyCameraMatched(distanceRange, lightLevelRange, CAMERAS_AVAILABLE_LIST)).toBe(true);
+  });
+
+  it('should match given test set', () => {
+
+    const distanceRange: CameraRange = [ 2, 20 ];
+    const lightLevelRange: CameraRange = [ 10, 1000 ];
+
+    const HARDWARE_CAMERA_TEST_SET: HardwareCamera[] = [
+      {
+        cameraBrand: 'camera1',
+        cameraModel: 'Camera 1',
+        distanceRange: [ 0.5, 1 ],
+        lightLevelRange: [ 2, 5 ]
+      },
+      {
+        cameraBrand: 'camera2',
+        cameraModel: 'Camera 2',
+        distanceRange: [ 30, 50 ],
+        lightLevelRange: [ 1500, 5000 ]
+      },
+    ]
+
+    const result = isHardwareCameraSufficientCheck(distanceRange, lightLevelRange, HARDWARE_CAMERA_TEST_SET);
+    expect(result).toBe(false);
+
+    // Alternative approach
+    expect(isAnyCameraMatched(distanceRange, lightLevelRange, HARDWARE_CAMERA_TEST_SET)).toBe(false);
   });
 
 });

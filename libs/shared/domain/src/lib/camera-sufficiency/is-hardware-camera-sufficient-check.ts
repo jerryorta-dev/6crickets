@@ -16,33 +16,22 @@ export function isHardwareCameraSufficientCheck(
   const [ desiredMinDistance, desiredMaxDistance ] = desiredDistanceRange;
   const [ desiredMinLight, desiredMaxLight ] = desiredLightLevelRange;
 
-  let coveredMinDistance = Infinity;
-  let coveredMaxDistance = -Infinity;
-  let coveredMinLight = Infinity;
-  let coveredMaxLight = -Infinity;
 
-  // Iterate over all hardware cameras to find the minimum and maximum distance and light level ranges covered by them
+  // Iterate over all hardware cameras to find all the cameras that cover the desired distance and light level ranges
+  const matchedCameras: HardwareCamera[] = [];
+
   for (const camera of hardwareCameras) {
     const [ cameraMinDistance, cameraMaxDistance ] = camera.distanceRange;
     const [ cameraMinLight, cameraMaxLight ] = camera.lightLevelRange;
 
-    // Update the minimum and maximum ranges covered by the hardware cameras
-    coveredMinDistance = Math.min(coveredMinDistance, cameraMinDistance);
-    coveredMaxDistance = Math.max(coveredMaxDistance, cameraMaxDistance);
-
-    // Update the minimum and maximum light levels covered by the hardware cameras
-    coveredMinLight = Math.min(coveredMinLight, cameraMinLight);
-    coveredMaxLight = Math.max(coveredMaxLight, cameraMaxLight);
+    if ((cameraMinDistance <= desiredMinDistance) && (cameraMaxDistance >= desiredMaxDistance) &&
+      (cameraMinLight <= desiredMinLight) && (cameraMaxLight >= desiredMaxLight)) {
+      matchedCameras.push(camera);
+    }
   }
 
-  // Check if the desired distance and light level ranges are covered by the hardware cameras
-  const distanceCoverageSufficient = (coveredMinDistance <= desiredMinDistance) && (coveredMaxDistance >= desiredMaxDistance);
-
-  // Check if the desired light level range is covered by the hardware cameras
-  const lightLevelCoverageSufficient = (coveredMinLight <= desiredMinLight) && (coveredMaxLight >= desiredMaxLight);
-
-  // Return whether the coverage is
-  return distanceCoverageSufficient && lightLevelCoverageSufficient;
+  // If there are any matched cameras, then the hardware camera is sufficient
+  return matchedCameras.length > 0;
 }
 
 
@@ -69,4 +58,16 @@ export function getMatchedCameras(
   }
 
   return matchedCameras;
+}
+
+/**
+ * Alternative approach to reuse the getMatchedCameras function as
+ * a sufficient check.
+ * return if any camera is matched.
+ */
+export function isAnyCameraMatched(
+  desiredDistanceRange: CameraRange,
+  desiredLightLevelRange: CameraRange,
+  hardwareCameras: HardwareCamera[]): boolean {
+  return getMatchedCameras(desiredDistanceRange, desiredLightLevelRange, hardwareCameras).length > 0;
 }
